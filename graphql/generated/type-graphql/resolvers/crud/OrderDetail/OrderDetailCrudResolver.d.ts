@@ -1,0 +1,31 @@
+import { GraphQLResolveInfo } from "graphql";
+import { AggregateOrderDetailArgs } from "./args/AggregateOrderDetailArgs";
+import { CreateManyOrderDetailArgs } from "./args/CreateManyOrderDetailArgs";
+import { CreateOrderDetailArgs } from "./args/CreateOrderDetailArgs";
+import { DeleteManyOrderDetailArgs } from "./args/DeleteManyOrderDetailArgs";
+import { DeleteOrderDetailArgs } from "./args/DeleteOrderDetailArgs";
+import { FindFirstOrderDetailArgs } from "./args/FindFirstOrderDetailArgs";
+import { FindManyOrderDetailArgs } from "./args/FindManyOrderDetailArgs";
+import { FindUniqueOrderDetailArgs } from "./args/FindUniqueOrderDetailArgs";
+import { GroupByOrderDetailArgs } from "./args/GroupByOrderDetailArgs";
+import { UpdateManyOrderDetailArgs } from "./args/UpdateManyOrderDetailArgs";
+import { UpdateOrderDetailArgs } from "./args/UpdateOrderDetailArgs";
+import { UpsertOrderDetailArgs } from "./args/UpsertOrderDetailArgs";
+import { OrderDetail } from "../../../models/OrderDetail";
+import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
+import { AggregateOrderDetail } from "../../outputs/AggregateOrderDetail";
+import { OrderDetailGroupBy } from "../../outputs/OrderDetailGroupBy";
+export declare class OrderDetailCrudResolver {
+    orderDetail(ctx: any, info: GraphQLResolveInfo, args: FindUniqueOrderDetailArgs): Promise<OrderDetail | null>;
+    findFirstOrderDetail(ctx: any, info: GraphQLResolveInfo, args: FindFirstOrderDetailArgs): Promise<OrderDetail | null>;
+    orderDetails(ctx: any, info: GraphQLResolveInfo, args: FindManyOrderDetailArgs): Promise<OrderDetail[]>;
+    createOrderDetail(ctx: any, info: GraphQLResolveInfo, args: CreateOrderDetailArgs): Promise<OrderDetail>;
+    createManyOrderDetail(ctx: any, info: GraphQLResolveInfo, args: CreateManyOrderDetailArgs): Promise<AffectedRowsOutput>;
+    deleteOrderDetail(ctx: any, info: GraphQLResolveInfo, args: DeleteOrderDetailArgs): Promise<OrderDetail | null>;
+    updateOrderDetail(ctx: any, info: GraphQLResolveInfo, args: UpdateOrderDetailArgs): Promise<OrderDetail | null>;
+    deleteManyOrderDetail(ctx: any, info: GraphQLResolveInfo, args: DeleteManyOrderDetailArgs): Promise<AffectedRowsOutput>;
+    updateManyOrderDetail(ctx: any, info: GraphQLResolveInfo, args: UpdateManyOrderDetailArgs): Promise<AffectedRowsOutput>;
+    upsertOrderDetail(ctx: any, info: GraphQLResolveInfo, args: UpsertOrderDetailArgs): Promise<OrderDetail>;
+    aggregateOrderDetail(ctx: any, info: GraphQLResolveInfo, args: AggregateOrderDetailArgs): Promise<AggregateOrderDetail>;
+    groupByOrderDetail(ctx: any, info: GraphQLResolveInfo, args: GroupByOrderDetailArgs): Promise<OrderDetailGroupBy[]>;
+}
