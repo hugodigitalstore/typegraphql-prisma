@@ -11,6 +11,7 @@ generator typegraphql {
   provider = "typegraphql-prisma"
   output   = "../graphql/generated/type-graphql"
   //emitTranspiledCode = true
+
 }
 
 model Account {
