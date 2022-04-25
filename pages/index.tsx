@@ -9,8 +9,8 @@ import { ReactChild, ReactFragment, ReactPortal } from 'react';
 
 
 const prisma = new PrismaClient();
-const Home: NextPage<Company[]> = (companies:Company[]) => {
-console.log(companies);
+const Home: NextPage<Company[]> = (companies: Company[]) => {
+  console.log(companies);
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +29,7 @@ console.log(companies);
           ))}
         </ul>
       </div>
-{/* {
+      {/* {
   companies?.map((company:Company)=>{
 
   return (
@@ -46,14 +46,14 @@ console.log(companies);
   )
 }
 
-export const getServerSideProps:GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 
 
   const companies = await prisma.company.findMany();
   console.log(companies);
 
   return {
-    props: companies, 
+    props: { companies },
   }
 }
 
