@@ -4,12 +4,16 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import { Company, PrismaClient } from "@prisma/client";
-import { ReactChild, ReactFragment, ReactPortal } from 'react';
 
+import { InferGetServerSidePropsType } from "next"
+import { Key, ReactChild, ReactFragment, ReactPortal } from 'react';
 
 
 const prisma = new PrismaClient();
-const Home: NextPage<Company[]> = (companies: Company[]) => {
+//export default function UserPage({ companies }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
+const Home = ({companies}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  //const {companies}:Company[]=props.companies;
   console.log(companies);
   return (
     <div className={styles.container}>
@@ -21,7 +25,7 @@ const Home: NextPage<Company[]> = (companies: Company[]) => {
       <div>
         <h1>Companies</h1>
         <ul>
-          {companies.data.map(company => (
+          {companies.map((company:Company) => (
             <li key={company.id}>
               <a href={`/company/${company.id}`}>{company.name}</a>
               <p>{company.adress}</p>
@@ -53,7 +57,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   console.log(companies);
 
   return {
-    props: {data: companies },
+    props: { companies },
   }
 }
 
