@@ -33,19 +33,7 @@ const Home = ({companies}: InferGetServerSidePropsType<typeof getServerSideProps
           ))}
         </ul>
       </div>
-      {/* {
-  companies?.map((company:Company)=>{
-
-  return (
-    <div>
-      <h1>{company.name}</h1>
-      <p>{company.adress}</p>
-    </div>
-  )
-})} */}
-
-
-
+ 
     </div>
   )
 }
