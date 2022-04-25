@@ -1,6 +1,5 @@
 
-import { join } from "path";
-import * as types from "./types";
+
 import { resolvers } from "./generated/type-graphql";
 import { buildSchema } from "type-graphql";
 

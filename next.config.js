@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+ // experiments = { topLevelAwait: true };
 };
-nextConfig.experiments = { topLevelAwait: true };
+//nextConfig.experiments = { topLevelAwait: true };
 //return nextConfig;
 // module.exports = nextConfig;
 module.exports = {
-  webpack: (config, options) => {
-    config.experiments = {
+  webpack: (nextConfig, options) => {
+    nextConfig.experiments = {
+      layers : true,
       topLevelAwait: true,
     };
-    return config;
+    return nextConfig;
   },
 };
