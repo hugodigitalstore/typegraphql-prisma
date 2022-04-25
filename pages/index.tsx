@@ -21,7 +21,7 @@ const Home: NextPage<Company[]> = (companies: Company[]) => {
       <div>
         <h1>Companies</h1>
         <ul>
-          {companies.companies.map(company => (
+          {companies.data.map(company => (
             <li key={company.id}>
               <a href={`/company/${company.id}`}>{company.name}</a>
               <p>{company.adress}</p>
@@ -53,7 +53,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   console.log(companies);
 
   return {
-    props: { companies },
+    props: {data: companies },
   }
 }
 
